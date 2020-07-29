@@ -42,7 +42,6 @@ print(help(math))
 
 
 # 11 文字列
-
-
+##
 
 
