@@ -103,6 +103,7 @@ print('a is {0} {1} {2}'.format('a', 'b', 'c'))
 
 print('My name is {name} {family}.'.format(name='Jun', family='Sakai'))
 
+# 15 f-string
 a = 'a'
 print(f'a is {a}')
 
