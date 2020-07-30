@@ -40,8 +40,74 @@ print(y)
 ## help関数 ライブラリを入れるとhelpが出る
 print(help(math))
 
-
 # 11 文字列
 ##
+print("I don't know")
+print('I don\'t know')
+print("say \"I don\'t know\"")
+print('hello.\nHow are you?')
+## raw dataという意味のr
+print(r'\naaaa\n')
+
+print("############")
+print("""\
+line1
+line2
+line3\
+""")
+print("############")
+
+print('Py' + 'thon')
+
+s = ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+     'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+
+print(s)
+
+# 12 文字列のインデックスとスライス
+word = 'python'
+print(word[0])
+print(word[1])
+print(word[-1])
+
+print(word[0:2])
+print(word[2:])
+print(word[:2])
+
+word = 'j' + word[1:]
+print(word[:])
+
+n = len(word)
+print(n)
+
+# 13 文字のメソッド
+s = 'My name is Mike. Hi Mike.'
+print(s)
+is_start = s.startswith('My')
+print(is_start)
+
+print("###############")
+
+print(s.find('Mike'))
+print(s.rfind('Mike'))
+print(s.count('Mike'))
+print(s.capitalize())
+print(s.title())
+print(s.upper())
+print(s.lower())
+print(s.replace('Mike', 'Nancy'))
+
+# 14 文字の代入
+print('a is {}'.format('a'))
+print('a is {0} {1} {2}'.format('a', 'b', 'c'))
+
+print('My name is {name} {family}.'.format(name='Jun', family='Sakai'))
+
+a = 'a'
+print(f'a is {a}')
+
+x, y, z = 1, 2, 3
+print(f'a is {x}, {y}, {z}')
+
 
 
