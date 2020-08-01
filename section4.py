@@ -128,4 +128,71 @@ print(a, b)
 ## appendとかされたくないところで使う(valのイメージ)
 
 # 24 辞書型
+d = {'x': 10, 'y': 20}
+print(d)
+print(type(d))
+print(d['x'])
+d['z'] = 200
+print(d)
 
+zzz = dict(a=10, b=10)
+print(zzz)
+zzz = dict([('a', 10), ('b', 20)])
+print(zzz)
+
+# 25 辞書型のメソッド
+d = {'x': 10, 'y': 20}
+d2 = {'x': 1000, 'z': 20}
+print(d.keys())
+print(d.values())
+
+d.update(d2)
+print(d)
+print(d.get('x'))
+print(d.get('z'))
+d.pop('x')
+del d['y']
+
+d.clear()
+print('a' in d)
+
+# 26 辞書型のコピー
+## 辞書型もメモリ配置なので上書きしてしまう
+x = {'a': 1}
+y = x.copy()
+y['a'] = 1000
+print(y)
+
+# 27 辞書の使い方
+fruits = {
+    'apple': 100,
+    'banana': 200,
+    'orange': 300,
+}
+
+print(fruits['apple'])
+
+# 28 集合型
+a = {1, 2, 3, 2, 4, 4, 5}
+print(type(a))
+b = {2, 3, 5}
+print(a - b)
+print(a & b)
+print(a ^ b)
+
+# 29 集合のメソッド
+s = {1, 2, 3, 4, 5}
+s.add(6)
+print(s)
+s.remove(6)
+print(s)
+s.clear()
+
+# 30 集合の使い所
+my_friends = {'A', 'C', 'D'}
+A_friends = {'B', 'D', 'E'}
+print(my_friends & A_friends)
+
+f = ['apple', 'banana', 'apple', 'banana']
+kind = set(f)
+print(kind)
