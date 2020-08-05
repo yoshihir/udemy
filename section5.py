@@ -144,5 +144,16 @@ for _ in range(10):
     print('hello')
 
 # 45. enumerate関数
+for i, fruit in enumerate(['apple', 'banana', 'orange']):
+    print(i, fruit)
 
+# 46. zip関数
+days = ['Mon', 'Tue', 'Wed']
+fruits = ['apple', 'banana', 'orange']
+drinks = ['coffee', 'te', 'beer']
+
+for day, fruit, drink in zip(days, fruits, drinks):
+    print(day, fruit, drink)
+
+# 47. 辞書をfor文で処理をする
 
