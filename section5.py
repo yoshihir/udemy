@@ -156,4 +156,33 @@ for day, fruit, drink in zip(days, fruits, drinks):
     print(day, fruit, drink)
 
 # 47. 辞書をfor文で処理をする
+d = {'x': 100, 'y': 200}
+
+for k, v in d.items():
+    print(k, ':', v)
+
+
+# 48. 関数定義
+def say_someting():
+    s = 'hi'
+    return s
+
+
+result = say_someting()
+print(result)
+
+def what_is_this(color):
+    if color == 'red':
+        return 'tomoto'
+    elif color == 'green':
+        return 'green pepper'
+    else:
+        return "I don't know"
+
+result = what_is_this('red')
+result = what_is_this('green')
+result = what_is_this('yellow')
+print(result)
+
+# 49. 関数の引数と返り値の宣言
 
