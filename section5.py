@@ -171,6 +171,7 @@ def say_someting():
 result = say_someting()
 print(result)
 
+
 def what_is_this(color):
     if color == 'red':
         return 'tomoto'
@@ -179,10 +180,152 @@ def what_is_this(color):
     else:
         return "I don't know"
 
+
 result = what_is_this('red')
 result = what_is_this('green')
 result = what_is_this('yellow')
 print(result)
 
+
 # 49. 関数の引数と返り値の宣言
+## 下記のように宣言ができるけど、stringを渡せてしまう
+def add_num(a: int, b: int) -> int:
+    return a + b
+
+
+r = add_num(10, 20)
+print(r)
+
+
+# 50. 位置引数とキーワード引数とデフォルト引数
+def menu(entree='beef', drink='wine', dessert='ice'):
+    print('entree = ', entree)
+    print('drink = ', drink)
+    print('dessert = ', dessert)
+
+
+menu(entree='chicken')
+
+
+# 51. デフォルト引数で気をつけること
+## listやdictionaryなどの参照渡し系は関数で渡さない
+def test_func(x, l=None):
+    if l is None:
+        l = []
+    l.append(x)
+    return l
+
+
+r = test_func(100)
+print(r)
+
+r = test_func(100)
+print(r)
+
+
+# 52. 位置引数のタプル化
+## *argでタプルにして渡せる
+def say_something(*args):
+    for arg in args:
+        print(arg)
+
+
+say_something('Hi', 'Mike', 'Nance')
+
+
+# 53. キーワード引数の辞書化
+def menu(**kwargs):
+    for k, v in kwargs.items():
+        print(k, v)
+
+
+menu(entree='beef', drink='coffee')
+
+
+# d = {
+#     'entree': 'beef',
+#     'drink': 'ice coffee',
+#     'dessert': 'ice'
+# }
+# menu(**d)
+
+
+# 54. Docstringsとは
+def example_func(param1, param2):
+    """Example function with type
+    
+    Args:
+        prams1 (int): The fist
+        prams2 (int): The second
+
+    Returns:
+        bool: The
+    """
+    print(param1)
+    print(param2)
+    return True
+
+
+print(example_func.__doc__)
+
+
+# 55. 関数内関数
+## この関数内だけで使う関数は inner functionとして中に書く
+def outer(a, b):
+    def plus(c, d):
+        return c + d
+
+    r = plus(a, b)
+    print(r)
+
+
+outer(1, 2)
+
+# 56. クロージャー
+def outer2(a, b):
+    def inner():
+        return a + b
+
+    return inner
+
+## この時点では実行されない
+f = outer2(1, 2)
+## ()付きのときに初めて実行される
+r = f()
+print(r)
+
+# 57. デコレーター
+## @functionをつけると56のように()付きで実行をやらなくて済む
+## @を2個書くこともできる
+
+def print_more(func):
+    def wrapper(*args, **kwargs):
+        print('func', func.__name__)
+        print('args', args)
+        print('kwargs', kwargs)
+        result = func(*args, **kwargs)
+        print('result', result)
+        return result
+    return wrapper
+
+def print_info(func):
+    def wrapper(*args, **kwargs):
+        print('start')
+        result = func(*args, **kwargs)
+        print('end')
+        return result
+    return wrapper
+
+@print_info
+@print_more
+def add_num(a, b):
+    return a + b
+
+r = add_num(10, 20)
+print(r)
+
+# 58. ラムダ
+
+
+
 
