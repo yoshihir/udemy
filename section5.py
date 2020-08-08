@@ -253,7 +253,7 @@ menu(entree='beef', drink='coffee')
 # 54. Docstringsとは
 def example_func(param1, param2):
     """Example function with type
-    
+
     Args:
         prams1 (int): The fist
         prams2 (int): The second
@@ -281,6 +281,7 @@ def outer(a, b):
 
 outer(1, 2)
 
+
 # 56. クロージャー
 def outer2(a, b):
     def inner():
@@ -288,11 +289,13 @@ def outer2(a, b):
 
     return inner
 
+
 ## この時点では実行されない
 f = outer2(1, 2)
 ## ()付きのときに初めて実行される
 r = f()
 print(r)
+
 
 # 57. デコレーター
 ## @functionをつけると56のように()付きで実行をやらなくて済む
@@ -306,7 +309,9 @@ def print_more(func):
         result = func(*args, **kwargs)
         print('result', result)
         return result
+
     return wrapper
+
 
 def print_info(func):
     def wrapper(*args, **kwargs):
@@ -314,18 +319,40 @@ def print_info(func):
         result = func(*args, **kwargs)
         print('end')
         return result
+
     return wrapper
+
 
 @print_info
 @print_more
 def add_num(a, b):
     return a + b
 
+
 r = add_num(10, 20)
 print(r)
 
 # 58. ラムダ
+## こんな感じで1行で書ける
+## def sample_func(word):
+##     return word.capitalize()
+# ↓
+## sample_func = lambda word: word.capitalize()
+
+l = ['Mon', 'tue', 'Wed', 'Thu', 'fri', 'sat', 'Sun']
 
 
+def change_words(words, func):
+    for word in words:
+        print(func(word))
 
+
+# def sample_func(word):
+#     return word.capitalize()
+
+sample_func = lambda word: word.capitalize()
+
+change_words(l, sample_func)
+
+# 59. ジェネレーター
 
