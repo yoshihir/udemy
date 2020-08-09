@@ -354,5 +354,20 @@ sample_func = lambda word: word.capitalize()
 
 change_words(l, sample_func)
 
+
 # 59. ジェネレーター
+## 内容としてはforループと同じ。yieldに全部要素が入っていく感じ。1個ずつ処理される
+def greeting():
+    yield 'Good morning'
+    yield 'Good afternoon'
+    yield 'Good night'
+
+
+g = greeting()
+print(next(g))
+print(next(g))
+print(next(g))
+
+# 60. リスト内包表記
+
 
