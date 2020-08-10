@@ -369,5 +369,10 @@ print(next(g))
 print(next(g))
 
 # 60. リスト内包表記
+## タプルからリストに変換
+t = (1, 2,3, 4,5)
 
+r = [i for i in t if i % 2 == 0]
+print(r)
 
+# 61. 辞書包括表記
