@@ -370,9 +370,59 @@ print(next(g))
 
 # 60. リスト内包表記
 ## タプルからリストに変換
-t = (1, 2,3, 4,5)
+t = (1, 2, 3, 4, 5)
 
 r = [i for i in t if i % 2 == 0]
 print(r)
 
 # 61. 辞書包括表記
+w = ['mon', 'tue', 'wed']
+f = ['coffee', 'milk', 'water']
+
+d = {}
+for x, y in zip(w, f):
+    d[x] = y
+
+print(d)
+
+d = {x: y for x, y in zip(w, f)}
+print(d)
+
+# 62. 集合内包表記
+s = set()
+
+for i in range(10):
+    if i % 2 == 0:
+        s.add(i)
+
+print(s)
+
+s = {i for i in range(10) if i % 2 == 0}
+print(s)
+
+
+# 63. ジェネレーター内包表記
+def g():
+    for i in range(10):
+        yield i
+
+
+g = g()
+
+g = (i for i in range(10))
+print(next(g))
+
+# 64. 名前空間とスコープ
+## global変数
+animal = 'cat'
+
+
+def f():
+    print('local:', locals())
+
+
+f()
+print('global:', globals())
+
+# 65. 例外処理
+
