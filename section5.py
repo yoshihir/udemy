@@ -425,4 +425,34 @@ f()
 print('global:', globals())
 
 # 65. 例外処理
+## exeptionの階層
+## https://docs.python.org/ja/3/library/exceptions.html
+## finallyは最後に必ず実行される
+## elseはerrorがなく、抜けた場合に実行される
+l = [1, 2, 3]
+i = 5
+
+try:
+    l[i]
+except IndexError as ex:
+    print("Don't worry: {}".format(ex))
+else:
+    print('done')
+finally:
+    print('clean up')
+
+# 66. 独自例外の作成
+class UppercaseError(Exception):
+    pass
+
+def check():
+    words = ['APPLE', 'orange', 'banana']
+    for word in words:
+        if word.isupper():
+            raise UppercaseError(word)
+
+try:
+    check()
+except UppercaseError as exc:
+    print('This is my fault Go next')
 
