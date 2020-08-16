@@ -19,6 +19,7 @@ print(r)
 
 # 69. 絶対パスと相対パスのImport
 from lesson_package.talk import human
+
 print(human.sing())
 
 # 70. アスタリスクのインホートと__init__.pyと__all__の意味
@@ -39,5 +40,26 @@ print(human.sing())
 ## commandだとpython setup.py sdist
 
 # 73. 組み込み関数
+## https://docs.python.org/ja/3/library/functions.html
+ranking = {
+    'A': 100,
+    'B': 85,
+    'C': 95
+}
+print(sorted(ranking, key=ranking.get, reverse=True))
 
+# 74. 標準ライブラリ
+## https://docs.python.org/ja/3/library/index.html
+
+s = 'aaaasyukhlrjfiwertj4'
+
+from collections import defaultdict
+
+d = defaultdict(int)
+
+for c in s:
+    d[c] += 1
+print(d)
+
+# 75. サードパーティーのライブラリ
 
