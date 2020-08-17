@@ -62,4 +62,41 @@ for c in s:
 print(d)
 
 # 75. サードパーティーのライブラリ
+## https://pypi.org/
+## pip install termcolorとコマンドは一緒
+from termcolor import colored
 
+print(colored('test', 'red'))
+print(help(colored))
+
+# 76. importする際の記述の仕方
+## 最初はpythonのパッケージ(アルファベット順), 次は1行空けてサードパーティ, 次は1行空けて自分たちのパッケージ, 最後はローカルのファイル
+import collections
+import os
+import sys
+
+import termcolor
+
+import lesson_package
+
+import config
+
+print(collections.__file__)
+print(termcolor.__file__)
+print(lesson_package.__file__)
+print(config.__file__)
+
+print(sys.path)
+
+# 77. __name__と__main__
+## importすると上からすべての処理をしてしまう(printとか)
+## なので、if __name__ == '__main__':と書き、mainだけを呼ぶようにしている
+print('config', __name__)
+
+
+def main():
+    print('main')
+
+
+if __name__ == '__main__':
+    main()
