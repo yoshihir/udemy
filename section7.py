@@ -77,4 +77,19 @@ class TeslaCar(Car):
 tesla_car = TeslaCar('Model S', passwd='111')
 tesla_car.auto_run()
 
+
 # 84. クラスを構造体として扱う時の注意点
+## 下記みたいにclassからobjectを生成した後にパラメータを追加できる
+## __を使っても__を指定すれば上書きできてしまうので注意
+class T(object):
+    pass
+
+
+t = T()
+t.name = 'Mike'
+t.age = 20
+print(t.name, t.age)
+
+# 85. ダックタイピング
+# 86. 抽象クラス
+# 87. 多重継承
