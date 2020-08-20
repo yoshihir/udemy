@@ -25,20 +25,21 @@ person.say_something()
 del person
 print('###################')
 
-
 # 81. クラスの継承
 # 82. メッソドのオーバーライドとsuperによる親のメソッドの呼び出し
 # 83. プロパティーを使った属性の設定
 # 85. ダックタイピング
+# 86. 抽象クラス(javaでいうインターフェイス、あまり推奨されてない) -> @abc.abstractmethodのところ
+import abc
+
+
 class Person(object):
     def __init__(self, age=1):
         self.age = age
 
+    @abc.abstractmethod
     def drive(self):
-        if self.age >= 18:
-            print('ok')
-        else:
-            raise Exception('No drive')
+        pass
 
 
 class Baby(Person):
@@ -48,6 +49,9 @@ class Baby(Person):
         else:
             raise ValueError
 
+    def drive(self):
+        raise Exception('No drive')
+
 
 class Adult(Person):
     def __init__(self, age=18):
@@ -55,6 +59,9 @@ class Adult(Person):
             super().__init__(age)
         else:
             raise ValueError
+
+    def drive(self):
+        print('ok')
 
 
 baby = Baby()
@@ -128,7 +135,6 @@ t = T()
 t.name = 'Mike'
 t.age = 20
 print(t.name, t.age)
-
 
 # 86. 抽象クラス
 # 87. 多重継承
