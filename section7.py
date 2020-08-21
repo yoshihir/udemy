@@ -135,6 +135,3 @@ t = T()
 t.name = 'Mike'
 t.age = 20
 print(t.name, t.age)
-
-# 86. 抽象クラス
-# 87. 多重継承
