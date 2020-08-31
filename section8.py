@@ -5,6 +5,7 @@ with open('test.txt', 'w') as f:
 print('My', 'name', 'is', 'Mike', sep='#', end='!', file=f)
 
 # 93. ファイルの読み込み
+# 94. seekを使って移動する
 s = """\
 AAA
 BBB
@@ -23,5 +24,7 @@ with open('test.txt', 'r') as f:
         print(line)
         if not line:
             break
+
+        ## f.seek(5)で読み込む位置を進めさせられる。でも使わないかも
 
 
