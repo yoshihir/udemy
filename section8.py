@@ -28,3 +28,10 @@ with open('test.txt', 'r') as f:
         ## f.seek(5)で読み込む位置を進めさせられる。でも使わないかも
 
 
+# 95. 書き込み読み込みモード
+## w+やr+で書き込みができ、さらに読み込みができるモードになる。書き込みの場合、seekで初期位置に移動してからreadしないと見れない。使うか?
+# with open('test.txt', 'w+') as f:
+#     f.write(s)
+#     f.seek(0)
+#     print(f.read())
+
