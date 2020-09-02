@@ -2,7 +2,7 @@
 # 92. withステートメントでファイルをopenする
 with open('test.txt', 'w') as f:
     f.write('Test\n')
-print('My', 'name', 'is', 'Mike', sep='#', end='!', file=f)
+    print('My', 'name', 'is', 'Mike', sep='#', end='!', file=f)
 
 # 93. ファイルの読み込み
 # 94. seekを使って移動する
@@ -34,4 +34,14 @@ with open('test.txt', 'r') as f:
 #     f.write(s)
 #     f.seek(0)
 #     print(f.read())
+
+# 96. テンプレート
+import string
+with open('design/email_template.txt') as f:
+    t = string.Template(f.read())
+
+contents = t.substitute(name='Mike', contents='How are you?')
+print(contents)
+
+
 
