@@ -72,7 +72,6 @@ print(help(colored))
 # 76. importする際の記述の仕方
 ## 最初はpythonのパッケージ(アルファベット順), 次は1行空けてサードパーティ, 次は1行空けて自分たちのパッケージ, 最後はローカルのファイル
 import collections
-import os
 import sys
 
 import termcolor
